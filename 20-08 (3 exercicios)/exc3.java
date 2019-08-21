@@ -26,14 +26,14 @@ public class exc3 {
                 System.out.print(piloto2 + " ");
         }
         System.out.print("\n");
-        float temposAcumulados1 = 0, temposAcumulados2 = 0;
+        float tempoAnterior1 = 0, tempoAnterior2 = 0;
         for (int i = 0; i < qtdKm; i++) {
-            temposAcumulados1 += temposPiloto1[i];
-            temposAcumulados2 += temposPiloto2[i];
-            if (temposAcumulados1 > temposAcumulados2)
-                System.out.print(piloto2 + " ");
-            else
+            if (temposPiloto1[i] - tempoAnterior1 < temposPiloto2[i] - tempoAnterior2)
                 System.out.print(piloto1 + " ");
+            else
+                System.out.print(piloto2 + " ");
+            tempoAnterior1 = temposPiloto1[i];
+            tempoAnterior2 = temposPiloto2[i];
         }
     }
 }
