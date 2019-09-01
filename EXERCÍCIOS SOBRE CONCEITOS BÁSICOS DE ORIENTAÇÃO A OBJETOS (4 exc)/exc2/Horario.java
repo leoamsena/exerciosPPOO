@@ -14,8 +14,8 @@ public class Horario {
     }
 
     public void formatarTempo(int segundo) {
-        this.segundo = (segundo > 60) ? segundo % 60 : segundo;
-        this.minuto = (segundo / 60 > 60) ? (segundo / 60) % 60 : segundo / 60;
+        this.segundo = (segundo >= 60) ? segundo % 60 : segundo;
+        this.minuto = (segundo / 60 >= 60) ? (segundo / 60) % 60 : segundo / 60;
         this.hora = segundo / 3600;
         this.exibir();
     }
